@@ -6,6 +6,7 @@ import (
 	"math/cmplx"
 )
 
+// 包内变量，没有全局变量的概念, 声明多个是可以使用括号代替
 var (
 	aa = 3
 	ss = "kkk"
@@ -13,9 +14,10 @@ var (
 )
 
 func variableZeroValue() {
+	// go语言都是有初始值的 // 变量定义必须要使用的
 	var a int
 	var s string
-	fmt.Printf("%d %q\n", a, s)
+	fmt.Printf("%d %q\n", a, s) // %s 不能打印字符串“”,只能打印空值
 }
 
 func variableInitialValue() {
@@ -25,11 +27,14 @@ func variableInitialValue() {
 }
 
 func variableTypeDeduction() {
+	// 类型推断，C++后续也是支持的
 	var a, b, c, s = 3, 4, true, "def"
 	fmt.Println(a, b, c, s)
 }
 
+// 推荐使用这种方式
 func variableShorter() {
+	// 简介的写法,使用: 代替var
 	a, b, c, s := 3, 4, true, "def"
 	b = 5
 	fmt.Println(a, b, c, s)
@@ -52,11 +57,15 @@ func calcTriangle(a, b int) int {
 }
 
 func consts() {
+	// 可以写类型，也可以不写
+	const name string = "xiaoming"
+	fmt.Println(name)
+
 	const (
 		filename = "abc.txt"
 		a, b     = 3, 4
 	)
-	var c int
+	var c int = -1
 	c = int(math.Sqrt(a*a + b*b))
 	fmt.Println(filename, c)
 }

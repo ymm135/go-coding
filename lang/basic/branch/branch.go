@@ -7,7 +7,7 @@ import (
 
 func grade(score int) string {
 	g := ""
-	switch {
+	switch { // 可以不写条件，在case中填写
 	case score < 0 || score > 100:
 		panic(fmt.Sprintf(
 			"Wrong score: %d", score))

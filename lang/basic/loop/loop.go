@@ -30,11 +30,13 @@ func printFile(filename string) {
 func printFileContents(reader io.Reader) {
 	scanner := bufio.NewScanner(reader)
 
+	// go语言没有wile，相当于省略开始条件，只有结束条件
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 	}
 }
 
+// 死循环
 func forever() {
 	for {
 		fmt.Println("abc")

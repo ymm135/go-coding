@@ -25,7 +25,9 @@ func eval(a, b int, op string) (int, error) {
 }
 
 func div(a, b int) (q, r int) {
-	return a / b, a % b
+	// q = a / b
+	// r = a % b
+	return a / b, a % b //建议方式
 }
 
 func apply(op func(int, int) int, a, b int) int {
@@ -45,6 +47,7 @@ func sum(numbers ...int) int {
 	return s
 }
 
+// 也可以通过指针的方式返回 swap( a, b *int)
 func swap(a, b int) (int, int) {
 	return b, a
 }

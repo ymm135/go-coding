@@ -4,6 +4,7 @@ import "fmt"
 
 func printArray(arr [5]int) {
 	arr[0] = 100
+	// for _, v := range arr { 不需要下标
 	for i, v := range arr {
 		fmt.Println(i, v)
 	}
