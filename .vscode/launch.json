@@ -15,13 +15,21 @@
             "name": "gdb 启动",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/lang/basic/basic/basic",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "lldb"
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "编译当前文件"
         },
     ]
 }
