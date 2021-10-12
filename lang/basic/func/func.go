@@ -7,6 +7,7 @@ import (
 	"runtime"
 )
 
+//多个返回值
 func eval(a, b int, op string) (int, error) {
 	switch op {
 	case "+":
@@ -30,15 +31,20 @@ func div(a, b int) (q, r int) {
 	return a / b, a % b //建议方式
 }
 
+// 函数作为参数
 func apply(op func(int, int) int, a, b int) int {
+	//获取函数的指针
 	p := reflect.ValueOf(op).Pointer()
+	//获取函数名
 	opName := runtime.FuncForPC(p).Name()
+
 	fmt.Printf("Calling function %s with args "+
 		"(%d, %d)\n", opName, a, b)
 
 	return op(a, b)
 }
 
+// 可变参数, 我的猜测是range可以操作len(type)的所有类型
 func sum(numbers ...int) int {
 	s := 0
 	for i := range numbers {

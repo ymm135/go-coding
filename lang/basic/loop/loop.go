@@ -11,7 +11,7 @@ import (
 
 func convertToBin(n int) string {
 	result := ""
-	for ; n > 0; n /= 2 {
+	for ; n > 0; n /= 2 { //可以没有起始条件
 		lsb := n % 2
 		result = strconv.Itoa(lsb) + result
 	}

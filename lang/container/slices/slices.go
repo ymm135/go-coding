@@ -7,13 +7,15 @@ func updateSlice(s []int) {
 }
 
 func main() {
+	// 数组, 需要有具体数量要求
 	arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
-
+	
+	//切片
 	fmt.Println("arr[2:6] =", arr[2:6])
 	fmt.Println("arr[:6] =", arr[:6])
-	s1 := arr[2:]
+	s1 := arr[2:] 
 	fmt.Println("s1 =", s1)
-	s2 := arr[:]
+	s2 := arr[:] //全部的元素
 	fmt.Println("s2 =", s2)
 
 	fmt.Println("After updateSlice(s1)")
@@ -26,6 +28,7 @@ func main() {
 	fmt.Println(s2)
 	fmt.Println(arr)
 
+	// 重新分配
 	fmt.Println("Reslice")
 	fmt.Println(s2)
 	s2 = s2[:5]
@@ -33,6 +36,7 @@ func main() {
 	s2 = s2[2:]
 	fmt.Println(s2)
 
+	// 
 	fmt.Println("Extending slice")
 	arr[0], arr[2] = 0, 2
 	fmt.Println("arr =", arr)

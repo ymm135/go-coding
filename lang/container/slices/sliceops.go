@@ -9,6 +9,7 @@ func printSlice(s []int) {
 
 func sliceOps() {
 	fmt.Println("Creating slice")
+	// len=0, cap=0， 不会崩溃的
 	var s []int // Zero value for slice is nil
 
 	for i := 0; i < 100; i++ {
@@ -26,11 +27,11 @@ func sliceOps() {
 	printSlice(s3)
 
 	fmt.Println("Copying slice")
-	copy(s2, s1)
+	copy(s2, s1)  // 数组拷贝
 	printSlice(s2)
 
 	fmt.Println("Deleting elements from slice")
-	s2 = append(s2[:3], s2[4:]...)
+	s2 = append(s2[:3], s2[4:]...) 
 	printSlice(s2)
 
 	fmt.Println("Popping from front")

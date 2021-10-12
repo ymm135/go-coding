@@ -11,9 +11,10 @@ func printArray(arr [5]int) {
 }
 
 func main() {
+	// 数组声明方式
 	var arr1 [5]int
 	arr2 := [3]int{1, 3, 5}
-	arr3 := [...]int{2, 4, 6, 8, 10}
+	arr3 := [...]int{2, 4, 6, 8, 10} // ... 编译器计算个数
 	var grid [4][5]int
 
 	fmt.Println("array definitions:")

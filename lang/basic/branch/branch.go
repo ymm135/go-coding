@@ -28,6 +28,7 @@ func main() {
 	// please check what current directory is,
 	// and change filename accordingly.
 	const filename = "abc.txt"
+	// 可以有两个返回值
 	if contents, err := ioutil.ReadFile(filename); err != nil {
 		fmt.Println(err)
 	} else {

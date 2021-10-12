@@ -61,6 +61,7 @@ func consts() {
 	const name string = "xiaoming"
 	fmt.Println(name)
 
+	// 常量可以合并成一组,常量没有大写,首字母大写有特殊含义
 	const (
 		filename = "abc.txt"
 		a, b     = 3, 4
@@ -71,6 +72,7 @@ func consts() {
 }
 
 func enums() {
+	// 没有特殊的枚举关键字, iota 自增值的
 	const (
 		cpp = iota
 		_
@@ -79,6 +81,7 @@ func enums() {
 		javascript
 	)
 
+	//iota可以参与运算
 	const (
 		b = 1 << (10 * iota)
 		kb
