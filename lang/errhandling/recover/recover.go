@@ -5,7 +5,7 @@ import (
 )
 
 func tryRecover() {
-	defer func() {
+	defer func() {    //匿名函数
 		r := recover()
 		if r == nil {
 			fmt.Println("Nothing to recover. " +
@@ -13,13 +13,13 @@ func tryRecover() {
 				"below.")
 			return
 		}
-		if err, ok := r.(error); ok {
+		if err, ok := r.(error); ok { //获取错误类型
 			fmt.Println("Error occurred:", err)
 		} else {
 			panic(fmt.Sprintf(
 				"I don't know what to do: %v", r))
 		}
-	}()
+	}() // 函数调用
 
 	// Uncomment each block to see different panic
 	// scenarios.

@@ -11,7 +11,7 @@ import (
 
 func tryDefer() {
 	for i := 0; i < 100; i++ {
-		defer fmt.Println(i)
+		defer fmt.Println(i) //先进后出
 		if i == 30 {
 			// Uncomment panic to see
 			// how it works with defer
