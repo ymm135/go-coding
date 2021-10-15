@@ -8,7 +8,7 @@ import (
 
 type atomicInt struct {
 	value int
-	lock  sync.Mutex
+	lock  sync.Mutex  //lock
 }
 
 func (a *atomicInt) increment() {

@@ -40,10 +40,10 @@ func main() {
 	var worker = createWorker(0)
 
 	var values []int
-	tm := time.After(10 * time.Second)
-	tick := time.Tick(time.Second)
+	tm := time.After(10 * time.Second)  // 10s会向channel中送一个数据
+	tick := time.Tick(time.Second)      //每个1s中会向channel中送一个数据
 	for {
-		var activeWorker chan<- int
+		var activeWorker chan<- int  //默认是nil， 在select中可以运行,但是不会被选到
 		var activeValue int
 		if len(values) > 0 {
 			activeWorker = worker
@@ -58,7 +58,7 @@ func main() {
 		case activeWorker <- activeValue:
 			values = values[1:]
 
-		case <-time.After(800 * time.Millisecond):
+		case <-time.After(800 * time.Millisecond): //每个0.8s中选择输出
 			fmt.Println("timeout")
 		case <-tick:
 			fmt.Println(

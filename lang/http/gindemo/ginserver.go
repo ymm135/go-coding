@@ -16,6 +16,8 @@ func main() {
 		panic(err)
 	}
 
+	// middleware, 类似java aop, 作用于日志打印
+	// c.Request.URL.Path c.Writer.Status(
 	r.Use(func(c *gin.Context) {
 		s := time.Now()
 

@@ -11,6 +11,7 @@ type OrderItem struct {
 	Price float64 `json:"price"`
 }
 
+// 自定义json字段名称
 type Order struct {
 	ID         string      `json:"id"`
 	Items      []OrderItem `json:"items"`
@@ -18,6 +19,8 @@ type Order struct {
 }
 
 func main() {
+	marshal()
+	unmarshal()
 	parseNLP()
 }
 
@@ -39,7 +42,7 @@ func marshal() {
 		},
 	}
 
-	b, err := json.Marshal(o)
+	b, err := json.Marshal(o) //首字母大写才是public, 如果结构体首字母小写, 无法访问字段
 	if err != nil {
 		panic(err)
 	}
@@ -50,7 +53,7 @@ func marshal() {
 func unmarshal() {
 	s := `{"id":"1234","items":[{"id":"item_1","name":"learn go","price":15},{"id":"item_2","name":"interview","price":10}],"total_price":20}`
 	var o Order
-	err := json.Unmarshal([]byte(s), &o)
+	err := json.Unmarshal([]byte(s), &o)  // 需要取地址
 	if err != nil {
 		panic(err)
 	}

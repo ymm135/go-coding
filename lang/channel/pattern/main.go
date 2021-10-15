@@ -21,7 +21,7 @@ func msgGen(name string) chan string {
 
 func fanIn(chs ...chan string) chan string {
 	c := make(chan string)
-	for _, ch := range chs {
+	for _, ch := range chs {      //使用range遍历
 		go func(in chan string) {
 			for {
 				c <- <-in
@@ -35,7 +35,7 @@ func fanInBySelect(c1, c2 chan string) chan string {
 	c := make(chan string)
 	go func() {
 		for {
-			select {
+			select {      //select 多路复用器
 			case m := <-c1:
 				c <- m
 			case m := <-c2:

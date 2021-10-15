@@ -6,14 +6,14 @@ import (
 )
 
 func worker(id int, c chan int) {
-	for n := range c {
+	for n := range c { //使用range也行, 也可以使用n,ok := <-c
 		fmt.Printf("Worker %d received %c\n",
 			id, n)
 	}
 }
 
-func createWorker(id int) chan<- int {
-	c := make(chan int)
+func createWorker(id int) chan<- int {//chan<- int表明用于发送数据
+	c := make(chan int)               //<-chan int表明用于接收数据
 	go worker(id, c)
 	return c
 }
@@ -36,9 +36,10 @@ func chanDemo() {
 }
 
 func bufferedChannel() {
-	c := make(chan int, 3)
+	//缓冲区时3个, 缓存超过3个以后才会block
+	c := make(chan int, 3)  //channel 也是一等公民, 可以作为参数
 	go worker(0, c)
-	c <- 'a'
+	c <- 'a' // channel作为协程之间的通道, 如果存进没有取出, 就会block
 	c <- 'b'
 	c <- 'c'
 	c <- 'd'

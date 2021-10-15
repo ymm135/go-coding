@@ -2,8 +2,9 @@ package main
 
 import "testing"
 
+// 文件命名 测试功能_test.go
 func TestTriangle(t *testing.T) {
-	tests := []struct{ a, b, c int }{
+	tests := []struct{ a, b, c int }{  //测试数据
 		{3, 4, 5},
 		{5, 12, 13},
 		{8, 15, 17},
@@ -11,7 +12,7 @@ func TestTriangle(t *testing.T) {
 		{30000, 40000, 50000},
 	}
 
-	for _, tt := range tests {
+	for _, tt := range tests {//进行测试
 		if actual := calcTriangle(tt.a, tt.b); actual != tt.c {
 			t.Errorf("calcTriangle(%d, %d); "+
 				"got %d; expected %d",
