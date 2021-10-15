@@ -1,6 +1,10 @@
 ### Google资深工程师深度讲解Go语言 由浅入深掌握Go语言(课程代码)
 [课程链接](https://coding.imooc.com/learn/list/180.html)
 
+[大神的go学习笔记](https://github.com/cch123/golang-notes)  
+[从汇编的角度理解Go](https://github.com/ymm135/TD4-4BIT-CPU/blob/master/go-asm.md)    
+[gin框架学习](https://github.com/ymm135/gin-vue-admin)  
+
 #### 目录
 
 #### [第1章 课程介绍](./docs/1_课程介绍.md)
