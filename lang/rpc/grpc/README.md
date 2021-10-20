@@ -3,7 +3,7 @@
 Follow these setup to run the [quick start][] example:
 
 hellowork.proto 
-```console
+```
 // Copyright 2015 gRPC authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -137,14 +137,14 @@ HTTP/2是什么
 1. 首先选择wireshark配置>>Protocols>>ProtoBuf 设置proto文件路径
 <br>
 <div align=center>
-<img src="../../../res/protobuf.png" width="40%" height="40%" title="proto文件路径"></img>  
+<img src="../../../res/protobuf.png" width="60%" height="60%" title="proto文件路径"></img>  
 </div>
 <br>
 
 2. 找到tcp消息,右击选择Decode As, 设置current为http2
 <br>
 <div align=center>
-<img src="../../../res/http2-decode.png" width="40%" height="40%" title="Decode As"></img>  
+<img src="../../../res/http2-decode.png" width="60%" height="60%" title="Decode As"></img>  
 </div>
 <br>
 

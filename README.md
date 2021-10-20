@@ -6,6 +6,7 @@
 [gin框架学习](https://github.com/ymm135/gin-vue-admin)  
 [go编译器和链接器](https://github.com/ymm135/go-build)   
 [go语言版本数据结构及算法](https://github.com/ymm135/go-algorithms-data-structures)  
+[go gRPC的应用,包含流程及抓包分析](./lang/rpc/grpc/README.md)  
 
 #### 目录
 
