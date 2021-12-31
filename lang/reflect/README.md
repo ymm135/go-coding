@@ -258,10 +258,7 @@ type Type interface {
 
 
 # Go 反射应用
+[gin web参数绑定](https://github.com/ymm135/golang-cookbook/blob/master/md/web/gin/gin-bind.md)  
 
-
-# Go 动态代理
-
-# Go 反射执行效率  
 
 
